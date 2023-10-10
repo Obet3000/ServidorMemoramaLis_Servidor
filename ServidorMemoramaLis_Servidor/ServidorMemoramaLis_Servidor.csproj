@@ -35,6 +35,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -43,11 +45,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="AutentificacionServicio.cs" />
+    <Compile Include="program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Dominio\Dominio.csproj">
+      <Project>{EA42A4A9-5012-4070-A875-E36CD1B249FF}</Project>
+      <Name>Dominio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\InicioDeSesionService.Contracts\ServidorMemoramaLis.Contracts.csproj">
+      <Project>{117A54DD-8408-48D8-AD9B-335353E0E3AF}</Project>
+      <Name>ServidorMemoramaLis.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ServidorMemoramaLis.Logic\ServidorMemoramaLis.Logic.csproj">
+      <Project>{b177cd50-0d03-482a-8903-ec4dca6aa80d}</Project>
+      <Name>ServidorMemoramaLis.Logic</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
