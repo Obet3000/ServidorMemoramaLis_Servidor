@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="971f68c04ca9478b950d38f7912d6020" Name="Diagram1">
+        <EntityTypeShape EntityType="MemoramaLISModel.Amigos" Width="1.5" PointX="3" PointY="12.125" />
+        <EntityTypeShape EntityType="MemoramaLISModel.Cartas" Width="1.5" PointX="3.75" PointY="15.5" />
+        <EntityTypeShape EntityType="MemoramaLISModel.Jugadores" Width="1.5" PointX="0.75" PointY="6.25" />
+        <EntityTypeShape EntityType="MemoramaLISModel.Logins" Width="1.5" PointX="3" PointY="4.125" />
+        <EntityTypeShape EntityType="MemoramaLISModel.Partidas" Width="1.5" PointX="3.75" PointY="0.75" />
+        <EntityTypeShape EntityType="MemoramaLISModel.Partidas_Cartas" Width="1.5" PointX="6" PointY="0.75" />
+        <EntityTypeShape EntityType="MemoramaLISModel.Partidas_Jugadores" Width="1.5" PointX="6" PointY="6.75" />
+        <EntityTypeShape EntityType="MemoramaLISModel.Puntuaciones" Width="1.5" PointX="3" PointY="9.625" />
+        <AssociationConnector Association="MemoramaLISModel.FK_Amigos_Jugadores" />
+        <AssociationConnector Association="MemoramaLISModel.FK_Amigos_Jugadores1" />
+        <AssociationConnector Association="MemoramaLISModel.FK_Partidas_Cartas_idCarta" />
+        <AssociationConnector Association="MemoramaLISModel.FK_Logins_Jugadores" />
+        <AssociationConnector Association="MemoramaLISModel.FK_Partidas_Jugadores_Jugadores" />
+        <AssociationConnector Association="MemoramaLISModel.FK_Puntuaciones_Jugadores" />
+        <AssociationConnector Association="MemoramaLISModel.FK_Partidas_Cartas_IdPartida" />
+        <AssociationConnector Association="MemoramaLISModel.FK_Partidas_Jugadores_idPartida" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

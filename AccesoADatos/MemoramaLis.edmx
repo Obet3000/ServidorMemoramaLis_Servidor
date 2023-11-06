@@ -1,0 +1,671 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MemoramaLISModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Amigos">
+          <Key>
+            <PropertyRef Name="IdAmigos" />
+          </Key>
+          <Property Name="IdAmigos" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="IdJugador" Type="uniqueidentifier" />
+          <Property Name="IdAmigo" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="Cartas">
+          <Key>
+            <PropertyRef Name="idCarta" />
+          </Key>
+          <Property Name="idCarta" Type="int" Nullable="false" />
+          <Property Name="nombre_carta" Type="nvarchar" MaxLength="25" />
+          <Property Name="descripcion" Type="nvarchar" MaxLength="255" />
+          <Property Name="imagenRuta" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Jugadores">
+          <Key>
+            <PropertyRef Name="idJugador" />
+          </Key>
+          <Property Name="idJugador" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="nombreJugador" Type="nvarchar" MaxLength="20" />
+          <Property Name="contrasenia" Type="nvarchar" MaxLength="64" />
+          <Property Name="email" Type="nvarchar" MaxLength="100" />
+          <Property Name="Fotos" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Logins">
+          <Key>
+            <PropertyRef Name="idLogin" />
+          </Key>
+          <Property Name="idLogin" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="contrasenia" Type="nvarchar" MaxLength="64" />
+          <Property Name="email" Type="nvarchar" MaxLength="100" />
+          <Property Name="idJugador" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="Partidas">
+          <Key>
+            <PropertyRef Name="idPartida" />
+          </Key>
+          <Property Name="idPartida" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="numeroJugadores" Type="int" />
+          <Property Name="codigoPartida" Type="nvarchar" MaxLength="6" />
+        </EntityType>
+        <EntityType Name="Partidas_Cartas">
+          <Key>
+            <PropertyRef Name="idPartidasCartas" />
+          </Key>
+          <Property Name="idPartidasCartas" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="idCarta" Type="int" />
+          <Property Name="IdPartida" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Partidas_Jugadores">
+          <Key>
+            <PropertyRef Name="idPartida_IdJugador" />
+          </Key>
+          <Property Name="idPartida_IdJugador" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="idPartida" Type="nvarchar" MaxLength="50" />
+          <Property Name="idJugador" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="Puntuaciones">
+          <Key>
+            <PropertyRef Name="idPuntuacion" />
+          </Key>
+          <Property Name="idPuntuacion" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="puntuacion" Type="int" />
+          <Property Name="idJugador" Type="uniqueidentifier" />
+        </EntityType>
+        <Association Name="FK_Amigos_Jugadores">
+          <End Role="Jugadores" Type="Self.Jugadores" Multiplicity="0..1" />
+          <End Role="Amigos" Type="Self.Amigos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Jugadores">
+              <PropertyRef Name="idJugador" />
+            </Principal>
+            <Dependent Role="Amigos">
+              <PropertyRef Name="IdJugador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Amigos_Jugadores1">
+          <End Role="Jugadores" Type="Self.Jugadores" Multiplicity="0..1" />
+          <End Role="Amigos" Type="Self.Amigos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Jugadores">
+              <PropertyRef Name="idJugador" />
+            </Principal>
+            <Dependent Role="Amigos">
+              <PropertyRef Name="IdAmigo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Logins_Jugadores">
+          <End Role="Jugadores" Type="Self.Jugadores" Multiplicity="0..1" />
+          <End Role="Logins" Type="Self.Logins" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Jugadores">
+              <PropertyRef Name="idJugador" />
+            </Principal>
+            <Dependent Role="Logins">
+              <PropertyRef Name="idJugador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Partidas_Cartas_idCarta">
+          <End Role="Cartas" Type="Self.Cartas" Multiplicity="0..1" />
+          <End Role="Partidas_Cartas" Type="Self.Partidas_Cartas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cartas">
+              <PropertyRef Name="idCarta" />
+            </Principal>
+            <Dependent Role="Partidas_Cartas">
+              <PropertyRef Name="idCarta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Partidas_Cartas_IdPartida">
+          <End Role="Partidas" Type="Self.Partidas" Multiplicity="0..1" />
+          <End Role="Partidas_Cartas" Type="Self.Partidas_Cartas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Partidas">
+              <PropertyRef Name="idPartida" />
+            </Principal>
+            <Dependent Role="Partidas_Cartas">
+              <PropertyRef Name="IdPartida" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Partidas_Jugadores_idPartida">
+          <End Role="Partidas" Type="Self.Partidas" Multiplicity="0..1" />
+          <End Role="Partidas_Jugadores" Type="Self.Partidas_Jugadores" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Partidas">
+              <PropertyRef Name="idPartida" />
+            </Principal>
+            <Dependent Role="Partidas_Jugadores">
+              <PropertyRef Name="idPartida" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Partidas_Jugadores_Jugadores">
+          <End Role="Jugadores" Type="Self.Jugadores" Multiplicity="0..1" />
+          <End Role="Partidas_Jugadores" Type="Self.Partidas_Jugadores" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Jugadores">
+              <PropertyRef Name="idJugador" />
+            </Principal>
+            <Dependent Role="Partidas_Jugadores">
+              <PropertyRef Name="idJugador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Puntuaciones_Jugadores">
+          <End Role="Jugadores" Type="Self.Jugadores" Multiplicity="0..1" />
+          <End Role="Puntuaciones" Type="Self.Puntuaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Jugadores">
+              <PropertyRef Name="idJugador" />
+            </Principal>
+            <Dependent Role="Puntuaciones">
+              <PropertyRef Name="idJugador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SPI_Jugador" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="nombreJugador" Type="nvarchar" Mode="In" />
+          <Parameter Name="contrasenia" Type="nvarchar" Mode="In" />
+          <Parameter Name="email" Type="nvarchar" Mode="In" />
+          <Parameter Name="foto" Type="varbinary(max)" Mode="In" />
+          <Parameter Name="estado" Type="int" Mode="InOut" />
+          <Parameter Name="mensaje" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <Function Name="SPS_JugadorPorCredenciales" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="email" Type="nvarchar" Mode="In" />
+          <Parameter Name="contraseniaHash" Type="nvarchar" Mode="In" />
+          <Parameter Name="estado" Type="int" Mode="InOut" />
+          <Parameter Name="mensaje" Type="nvarchar(max)" Mode="InOut" />
+        </Function>
+        <EntityContainer Name="MemoramaLISModelStoreContainer">
+          <EntitySet Name="Amigos" EntityType="Self.Amigos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cartas" EntityType="Self.Cartas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Jugadores" EntityType="Self.Jugadores" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Logins" EntityType="Self.Logins" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Partidas" EntityType="Self.Partidas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Partidas_Cartas" EntityType="Self.Partidas_Cartas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Partidas_Jugadores" EntityType="Self.Partidas_Jugadores" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Puntuaciones" EntityType="Self.Puntuaciones" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Amigos_Jugadores" Association="Self.FK_Amigos_Jugadores">
+            <End Role="Jugadores" EntitySet="Jugadores" />
+            <End Role="Amigos" EntitySet="Amigos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Amigos_Jugadores1" Association="Self.FK_Amigos_Jugadores1">
+            <End Role="Jugadores" EntitySet="Jugadores" />
+            <End Role="Amigos" EntitySet="Amigos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Logins_Jugadores" Association="Self.FK_Logins_Jugadores">
+            <End Role="Jugadores" EntitySet="Jugadores" />
+            <End Role="Logins" EntitySet="Logins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Partidas_Cartas_idCarta" Association="Self.FK_Partidas_Cartas_idCarta">
+            <End Role="Cartas" EntitySet="Cartas" />
+            <End Role="Partidas_Cartas" EntitySet="Partidas_Cartas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Partidas_Cartas_IdPartida" Association="Self.FK_Partidas_Cartas_IdPartida">
+            <End Role="Partidas" EntitySet="Partidas" />
+            <End Role="Partidas_Cartas" EntitySet="Partidas_Cartas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Partidas_Jugadores_idPartida" Association="Self.FK_Partidas_Jugadores_idPartida">
+            <End Role="Partidas" EntitySet="Partidas" />
+            <End Role="Partidas_Jugadores" EntitySet="Partidas_Jugadores" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Partidas_Jugadores_Jugadores" Association="Self.FK_Partidas_Jugadores_Jugadores">
+            <End Role="Jugadores" EntitySet="Jugadores" />
+            <End Role="Partidas_Jugadores" EntitySet="Partidas_Jugadores" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Puntuaciones_Jugadores" Association="Self.FK_Puntuaciones_Jugadores">
+            <End Role="Jugadores" EntitySet="Jugadores" />
+            <End Role="Puntuaciones" EntitySet="Puntuaciones" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MemoramaLISModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="MemoramaLISEntities" annotation:LazyLoadingEnabled="true">
+          <FunctionImport Name="sp_alterdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_creatediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_dropdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(MemoramaLISModel.sp_helpdiagramdefinition_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(MemoramaLISModel.sp_helpdiagrams_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_renamediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="new_diagramname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_upgraddiagrams" />
+          <FunctionImport Name="SPI_Jugador">
+            <Parameter Name="nombreJugador" Mode="In" Type="String" />
+            <Parameter Name="contrasenia" Mode="In" Type="String" />
+            <Parameter Name="email" Mode="In" Type="String" />
+            <Parameter Name="foto" Mode="In" Type="Binary" />
+            <Parameter Name="estado" Mode="InOut" Type="Int32" />
+            <Parameter Name="mensaje" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SPS_JugadorPorCredenciales">
+            <Parameter Name="email" Mode="In" Type="String" />
+            <Parameter Name="contraseniaHash" Mode="In" Type="String" />
+            <Parameter Name="estado" Mode="InOut" Type="Int32" />
+            <Parameter Name="mensaje" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="Amigos" EntityType="MemoramaLISModel.Amigos" />
+          <EntitySet Name="Cartas" EntityType="MemoramaLISModel.Cartas" />
+          <EntitySet Name="Jugadores" EntityType="MemoramaLISModel.Jugadores" />
+          <EntitySet Name="Logins" EntityType="MemoramaLISModel.Logins" />
+          <EntitySet Name="Partidas" EntityType="MemoramaLISModel.Partidas" />
+          <EntitySet Name="Partidas_Cartas" EntityType="MemoramaLISModel.Partidas_Cartas" />
+          <EntitySet Name="Partidas_Jugadores" EntityType="MemoramaLISModel.Partidas_Jugadores" />
+          <EntitySet Name="Puntuaciones" EntityType="MemoramaLISModel.Puntuaciones" />
+          <AssociationSet Name="FK_Amigos_Jugadores" Association="MemoramaLISModel.FK_Amigos_Jugadores">
+            <End Role="Jugadores" EntitySet="Jugadores" />
+            <End Role="Amigos" EntitySet="Amigos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Amigos_Jugadores1" Association="MemoramaLISModel.FK_Amigos_Jugadores1">
+            <End Role="Jugadores" EntitySet="Jugadores" />
+            <End Role="Amigos" EntitySet="Amigos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Partidas_Cartas_idCarta" Association="MemoramaLISModel.FK_Partidas_Cartas_idCarta">
+            <End Role="Cartas" EntitySet="Cartas" />
+            <End Role="Partidas_Cartas" EntitySet="Partidas_Cartas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Logins_Jugadores" Association="MemoramaLISModel.FK_Logins_Jugadores">
+            <End Role="Jugadores" EntitySet="Jugadores" />
+            <End Role="Logins" EntitySet="Logins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Partidas_Jugadores_Jugadores" Association="MemoramaLISModel.FK_Partidas_Jugadores_Jugadores">
+            <End Role="Jugadores" EntitySet="Jugadores" />
+            <End Role="Partidas_Jugadores" EntitySet="Partidas_Jugadores" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Puntuaciones_Jugadores" Association="MemoramaLISModel.FK_Puntuaciones_Jugadores">
+            <End Role="Jugadores" EntitySet="Jugadores" />
+            <End Role="Puntuaciones" EntitySet="Puntuaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Partidas_Cartas_IdPartida" Association="MemoramaLISModel.FK_Partidas_Cartas_IdPartida">
+            <End Role="Partidas" EntitySet="Partidas" />
+            <End Role="Partidas_Cartas" EntitySet="Partidas_Cartas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Partidas_Jugadores_idPartida" Association="MemoramaLISModel.FK_Partidas_Jugadores_idPartida">
+            <End Role="Partidas" EntitySet="Partidas" />
+            <End Role="Partidas_Jugadores" EntitySet="Partidas_Jugadores" />
+          </AssociationSet>
+        </EntityContainer>
+        <ComplexType Name="sp_helpdiagramdefinition_Result">
+          <Property Type="Int32" Name="version" Nullable="true" />
+          <Property Type="Binary" Name="definition" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagrams_Result">
+          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+          <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        </ComplexType>
+        <EntityType Name="Amigos">
+          <Key>
+            <PropertyRef Name="IdAmigos" />
+          </Key>
+          <Property Name="IdAmigos" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="IdJugador" Type="Guid" />
+          <Property Name="IdAmigo" Type="Guid" />
+          <NavigationProperty Name="Jugadores" Relationship="MemoramaLISModel.FK_Amigos_Jugadores" FromRole="Amigos" ToRole="Jugadores" />
+          <NavigationProperty Name="Jugadores1" Relationship="MemoramaLISModel.FK_Amigos_Jugadores1" FromRole="Amigos" ToRole="Jugadores" />
+        </EntityType>
+        <EntityType Name="Cartas">
+          <Key>
+            <PropertyRef Name="idCarta" />
+          </Key>
+          <Property Name="idCarta" Type="Int32" Nullable="false" />
+          <Property Name="nombre_carta" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="descripcion" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="imagenRuta" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Partidas_Cartas" Relationship="MemoramaLISModel.FK_Partidas_Cartas_idCarta" FromRole="Cartas" ToRole="Partidas_Cartas" />
+        </EntityType>
+        <EntityType Name="Jugadores">
+          <Key>
+            <PropertyRef Name="idJugador" />
+          </Key>
+          <Property Name="idJugador" Type="Guid" Nullable="false" />
+          <Property Name="nombreJugador" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="contrasenia" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Fotos" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Amigos" Relationship="MemoramaLISModel.FK_Amigos_Jugadores" FromRole="Jugadores" ToRole="Amigos" />
+          <NavigationProperty Name="Amigos1" Relationship="MemoramaLISModel.FK_Amigos_Jugadores1" FromRole="Jugadores" ToRole="Amigos" />
+          <NavigationProperty Name="Logins" Relationship="MemoramaLISModel.FK_Logins_Jugadores" FromRole="Jugadores" ToRole="Logins" />
+          <NavigationProperty Name="Partidas_Jugadores" Relationship="MemoramaLISModel.FK_Partidas_Jugadores_Jugadores" FromRole="Jugadores" ToRole="Partidas_Jugadores" />
+          <NavigationProperty Name="Puntuaciones" Relationship="MemoramaLISModel.FK_Puntuaciones_Jugadores" FromRole="Jugadores" ToRole="Puntuaciones" />
+        </EntityType>
+        <EntityType Name="Logins">
+          <Key>
+            <PropertyRef Name="idLogin" />
+          </Key>
+          <Property Name="idLogin" Type="Guid" Nullable="false" />
+          <Property Name="contrasenia" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="idJugador" Type="Guid" />
+          <NavigationProperty Name="Jugadores" Relationship="MemoramaLISModel.FK_Logins_Jugadores" FromRole="Logins" ToRole="Jugadores" />
+        </EntityType>
+        <EntityType Name="Partidas">
+          <Key>
+            <PropertyRef Name="idPartida" />
+          </Key>
+          <Property Name="idPartida" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="numeroJugadores" Type="Int32" />
+          <Property Name="codigoPartida" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Partidas_Cartas" Relationship="MemoramaLISModel.FK_Partidas_Cartas_IdPartida" FromRole="Partidas" ToRole="Partidas_Cartas" />
+          <NavigationProperty Name="Partidas_Jugadores" Relationship="MemoramaLISModel.FK_Partidas_Jugadores_idPartida" FromRole="Partidas" ToRole="Partidas_Jugadores" />
+        </EntityType>
+        <EntityType Name="Partidas_Cartas">
+          <Key>
+            <PropertyRef Name="idPartidasCartas" />
+          </Key>
+          <Property Name="idPartidasCartas" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="idCarta" Type="Int32" />
+          <Property Name="IdPartida" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Cartas" Relationship="MemoramaLISModel.FK_Partidas_Cartas_idCarta" FromRole="Partidas_Cartas" ToRole="Cartas" />
+          <NavigationProperty Name="Partidas" Relationship="MemoramaLISModel.FK_Partidas_Cartas_IdPartida" FromRole="Partidas_Cartas" ToRole="Partidas" />
+        </EntityType>
+        <EntityType Name="Partidas_Jugadores">
+          <Key>
+            <PropertyRef Name="idPartida_IdJugador" />
+          </Key>
+          <Property Name="idPartida_IdJugador" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="idPartida" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="idJugador" Type="Guid" />
+          <NavigationProperty Name="Jugadores" Relationship="MemoramaLISModel.FK_Partidas_Jugadores_Jugadores" FromRole="Partidas_Jugadores" ToRole="Jugadores" />
+          <NavigationProperty Name="Partidas" Relationship="MemoramaLISModel.FK_Partidas_Jugadores_idPartida" FromRole="Partidas_Jugadores" ToRole="Partidas" />
+        </EntityType>
+        <EntityType Name="Puntuaciones">
+          <Key>
+            <PropertyRef Name="idPuntuacion" />
+          </Key>
+          <Property Name="idPuntuacion" Type="Guid" Nullable="false" />
+          <Property Name="puntuacion" Type="Int32" />
+          <Property Name="idJugador" Type="Guid" />
+          <NavigationProperty Name="Jugadores" Relationship="MemoramaLISModel.FK_Puntuaciones_Jugadores" FromRole="Puntuaciones" ToRole="Jugadores" />
+        </EntityType>
+        <Association Name="FK_Amigos_Jugadores">
+          <End Type="MemoramaLISModel.Jugadores" Role="Jugadores" Multiplicity="0..1" />
+          <End Type="MemoramaLISModel.Amigos" Role="Amigos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Jugadores">
+              <PropertyRef Name="idJugador" />
+            </Principal>
+            <Dependent Role="Amigos">
+              <PropertyRef Name="IdJugador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Amigos_Jugadores1">
+          <End Type="MemoramaLISModel.Jugadores" Role="Jugadores" Multiplicity="0..1" />
+          <End Type="MemoramaLISModel.Amigos" Role="Amigos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Jugadores">
+              <PropertyRef Name="idJugador" />
+            </Principal>
+            <Dependent Role="Amigos">
+              <PropertyRef Name="IdAmigo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Partidas_Cartas_idCarta">
+          <End Type="MemoramaLISModel.Cartas" Role="Cartas" Multiplicity="0..1" />
+          <End Type="MemoramaLISModel.Partidas_Cartas" Role="Partidas_Cartas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cartas">
+              <PropertyRef Name="idCarta" />
+            </Principal>
+            <Dependent Role="Partidas_Cartas">
+              <PropertyRef Name="idCarta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Logins_Jugadores">
+          <End Type="MemoramaLISModel.Jugadores" Role="Jugadores" Multiplicity="0..1" />
+          <End Type="MemoramaLISModel.Logins" Role="Logins" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Jugadores">
+              <PropertyRef Name="idJugador" />
+            </Principal>
+            <Dependent Role="Logins">
+              <PropertyRef Name="idJugador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Partidas_Jugadores_Jugadores">
+          <End Type="MemoramaLISModel.Jugadores" Role="Jugadores" Multiplicity="0..1" />
+          <End Type="MemoramaLISModel.Partidas_Jugadores" Role="Partidas_Jugadores" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Jugadores">
+              <PropertyRef Name="idJugador" />
+            </Principal>
+            <Dependent Role="Partidas_Jugadores">
+              <PropertyRef Name="idJugador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Puntuaciones_Jugadores">
+          <End Type="MemoramaLISModel.Jugadores" Role="Jugadores" Multiplicity="0..1" />
+          <End Type="MemoramaLISModel.Puntuaciones" Role="Puntuaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Jugadores">
+              <PropertyRef Name="idJugador" />
+            </Principal>
+            <Dependent Role="Puntuaciones">
+              <PropertyRef Name="idJugador" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Partidas_Cartas_IdPartida">
+          <End Type="MemoramaLISModel.Partidas" Role="Partidas" Multiplicity="0..1" />
+          <End Type="MemoramaLISModel.Partidas_Cartas" Role="Partidas_Cartas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Partidas">
+              <PropertyRef Name="idPartida" />
+            </Principal>
+            <Dependent Role="Partidas_Cartas">
+              <PropertyRef Name="IdPartida" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Partidas_Jugadores_idPartida">
+          <End Type="MemoramaLISModel.Partidas" Role="Partidas" Multiplicity="0..1" />
+          <End Type="MemoramaLISModel.Partidas_Jugadores" Role="Partidas_Jugadores" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Partidas">
+              <PropertyRef Name="idPartida" />
+            </Principal>
+            <Dependent Role="Partidas_Jugadores">
+              <PropertyRef Name="idPartida" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MemoramaLISModelStoreContainer" CdmEntityContainer="MemoramaLISEntities">
+          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="MemoramaLISModel.Store.sp_alterdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="MemoramaLISModel.Store.sp_creatediagram" />
+          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="MemoramaLISModel.Store.sp_dropdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="MemoramaLISModel.Store.sp_helpdiagramdefinition">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MemoramaLISModel.sp_helpdiagramdefinition_Result">
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="MemoramaLISModel.Store.sp_helpdiagrams">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MemoramaLISModel.sp_helpdiagrams_Result">
+                <ScalarProperty Name="Database" ColumnName="Database" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="MemoramaLISModel.Store.sp_renamediagram" />
+          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="MemoramaLISModel.Store.sp_upgraddiagrams" />
+          <FunctionImportMapping FunctionImportName="SPI_Jugador" FunctionName="MemoramaLISModel.Store.SPI_Jugador" />
+          <FunctionImportMapping FunctionImportName="SPS_JugadorPorCredenciales" FunctionName="MemoramaLISModel.Store.SPS_JugadorPorCredenciales" />
+          <EntitySetMapping Name="Amigos">
+            <EntityTypeMapping TypeName="MemoramaLISModel.Amigos">
+              <MappingFragment StoreEntitySet="Amigos">
+                <ScalarProperty Name="IdAmigo" ColumnName="IdAmigo" />
+                <ScalarProperty Name="IdJugador" ColumnName="IdJugador" />
+                <ScalarProperty Name="IdAmigos" ColumnName="IdAmigos" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cartas">
+            <EntityTypeMapping TypeName="MemoramaLISModel.Cartas">
+              <MappingFragment StoreEntitySet="Cartas">
+                <ScalarProperty Name="imagenRuta" ColumnName="imagenRuta" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="nombre_carta" ColumnName="nombre_carta" />
+                <ScalarProperty Name="idCarta" ColumnName="idCarta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Jugadores">
+            <EntityTypeMapping TypeName="MemoramaLISModel.Jugadores">
+              <MappingFragment StoreEntitySet="Jugadores">
+                <ScalarProperty Name="Fotos" ColumnName="Fotos" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="contrasenia" ColumnName="contrasenia" />
+                <ScalarProperty Name="nombreJugador" ColumnName="nombreJugador" />
+                <ScalarProperty Name="idJugador" ColumnName="idJugador" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Logins">
+            <EntityTypeMapping TypeName="MemoramaLISModel.Logins">
+              <MappingFragment StoreEntitySet="Logins">
+                <ScalarProperty Name="idJugador" ColumnName="idJugador" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="contrasenia" ColumnName="contrasenia" />
+                <ScalarProperty Name="idLogin" ColumnName="idLogin" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Partidas">
+            <EntityTypeMapping TypeName="MemoramaLISModel.Partidas">
+              <MappingFragment StoreEntitySet="Partidas">
+                <ScalarProperty Name="codigoPartida" ColumnName="codigoPartida" />
+                <ScalarProperty Name="numeroJugadores" ColumnName="numeroJugadores" />
+                <ScalarProperty Name="idPartida" ColumnName="idPartida" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Partidas_Cartas">
+            <EntityTypeMapping TypeName="MemoramaLISModel.Partidas_Cartas">
+              <MappingFragment StoreEntitySet="Partidas_Cartas">
+                <ScalarProperty Name="IdPartida" ColumnName="IdPartida" />
+                <ScalarProperty Name="idCarta" ColumnName="idCarta" />
+                <ScalarProperty Name="idPartidasCartas" ColumnName="idPartidasCartas" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Partidas_Jugadores">
+            <EntityTypeMapping TypeName="MemoramaLISModel.Partidas_Jugadores">
+              <MappingFragment StoreEntitySet="Partidas_Jugadores">
+                <ScalarProperty Name="idJugador" ColumnName="idJugador" />
+                <ScalarProperty Name="idPartida" ColumnName="idPartida" />
+                <ScalarProperty Name="idPartida_IdJugador" ColumnName="idPartida_IdJugador" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Puntuaciones">
+            <EntityTypeMapping TypeName="MemoramaLISModel.Puntuaciones">
+              <MappingFragment StoreEntitySet="Puntuaciones">
+                <ScalarProperty Name="idJugador" ColumnName="idJugador" />
+                <ScalarProperty Name="puntuacion" ColumnName="puntuacion" />
+                <ScalarProperty Name="idPuntuacion" ColumnName="idPuntuacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

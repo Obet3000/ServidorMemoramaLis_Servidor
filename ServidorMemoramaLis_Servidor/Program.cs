@@ -1,22 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using ServidorMemoramaLis.Contracts;
+using System;
 using System.ServiceModel;
-using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 
 namespace ServidorMemoramaLis_Servidor
 {
-    internal class program
+    internal class Program
     {
         static void Main(string[] args)
         {
-            using (ServiceHost host = new ServiceHost(typeof(AutentificacionServicio)))
-            {
-                host.Open();
-                Console.WriteLine("El servicio está en funcionamiento. Presiona Enter para detenerlo.");
-                Console.ReadLine();
-            }
+            Console.WriteLine("Iniciando servicios");
+            ServiceHost host1 = new ServiceHost(typeof(AutentificacionServicio));
+            ServiceHost host2 = new ServiceHost(typeof(ServicioChat));
+            host1.Open();
+            host2.Open();
+            Console.WriteLine("Servicios iniciados");
+
+            Console.ReadLine();
+            host2.Close();
+            host1.Close();
         }
     }
 }

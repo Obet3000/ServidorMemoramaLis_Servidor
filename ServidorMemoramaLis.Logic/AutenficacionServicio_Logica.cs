@@ -1,4 +1,4 @@
-﻿using AccesoABaseDeDatos;
+﻿using AccesoADatos;
 using Dominio;
 using System.Data.Entity.Core;
 using System.Data.Entity.Validation;
@@ -7,7 +7,6 @@ using System.Linq;
 using System.Runtime.Remoting.Messaging;
 using System.Transactions;
 using Microsoft.Build.Utilities;
-using Serilog;
 
 namespace ServidorMemoramaLis.Logic
 {
@@ -19,32 +18,37 @@ namespace ServidorMemoramaLis.Logic
             {
                 EstadoConexion = false
             };
-            using (var context = new AccesoABaseDeDatos.MemoramaLis())
-            {
-                var jugador = context.Jugadores.FirstOrDefault(j => j.nombreJugador == nombreJugador && j.contrasenia == contrasenia);
 
-                jugadorDTO.nombreJugador = jugador.nombreJugador;
-                jugadorDTO.email = jugador.email;
-                jugadorDTO.EstadoConexion = true;
+            using (var context = new MemoramaLISEntities())
+            {
+                Jugadores jugador = context.Jugadores.FirstOrDefault(j => j.email == nombreJugador && j.contrasenia == contrasenia);
+
+                if (jugador != null)
+                {
+                    jugadorDTO.EstadoConexion = true;
+                    jugadorDTO.Email = jugador.email;
+                    jugadorDTO.NombreJugador = jugador.nombreJugador;
+                    jugadorDTO.Fotos = jugador.Fotos;
+                }
+                return jugadorDTO;
             }
-            return jugadorDTO;
         }
+
         public bool RegistrarJugador(JugadoresDTO jugadorDTO)
         {
             bool status = false;
-            using (var context = new MemoramaLis())
+            using (var context = new MemoramaLISEntities())
             {
-                var nuevoJugador = new Jugadores
+                Jugadores nuevoJugador = new Jugadores
                 {
-                    idJugador = Guid.NewGuid().ToString(), 
-                    nombreJugador = jugadorDTO.nombreJugador,
-                    contrasenia = jugadorDTO.contrasenia,
-                    email = jugadorDTO.email,
+                    idJugador = Guid.NewGuid(),
+                    nombreJugador = jugadorDTO.NombreJugador,
+                    contrasenia = jugadorDTO.Contrasenia,
+                    email = jugadorDTO.Email,
                     Fotos = jugadorDTO.Fotos,
                 };
 
                 context.Jugadores.Add(nuevoJugador);
-
                 try
                 {
                     var resultado = context.SaveChanges();
