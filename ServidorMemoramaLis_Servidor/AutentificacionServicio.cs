@@ -8,17 +8,26 @@ using System.Threading.Tasks;
 using Dominio;
 using ServidorMemoramaLis.Logic;
 using ServidorMemoramaLis.Contracts;
+using System.Threading;
 
 namespace ServidorMemoramaLis_Servidor
 {
+    
     [ServiceBehavior(InstanceContextMode = InstanceContextMode.Single)]
     public class AutentificacionServicio : IAutentificacionServicio
     {
+        Dictionary<string, OperationContext> jugadoresActivos = new Dictionary<string, OperationContext>();
         public void AutentificacionUsuario(string usuario, string contrasenia)
         {
             AutenficacionServicio_Logica autenficacionServicio_Logica = new AutenficacionServicio_Logica();
             JugadoresDTO jugadorDTO = autenficacionServicio_Logica.respuestaAutenficacionJugador(usuario, contrasenia);
+
+            if (jugadorDTO.NombreJugador != null && !jugadoresActivos.ContainsKey(jugadorDTO.NombreJugador))
+            {
+                jugadoresActivos.Add(jugadorDTO.NombreJugador, OperationContext.Current);
+            }
             OperationContext.Current.GetCallbackChannel<IAutentificacionServicioCallBack>().RespuestaAutentificacion(jugadorDTO);
+            
         }
 
         public void RegistroJugador(JugadoresDTO jugador)

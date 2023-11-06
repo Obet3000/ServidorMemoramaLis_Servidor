@@ -10,15 +10,13 @@
 namespace AccesoADatos
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class Amigos
+    public partial class sp_helpdiagrams_Result
     {
-        public string IdAmigos { get; set; }
-        public Nullable<System.Guid> IdJugador { get; set; }
-        public Nullable<System.Guid> IdAmigo { get; set; }
-    
-        public virtual Jugadores Jugadores { get; set; }
-        public virtual Jugadores Jugadores1 { get; set; }
+        public string Database { get; set; }
+        public string Name { get; set; }
+        public int ID { get; set; }
+        public string Owner { get; set; }
+        public int OwnerID { get; set; }
     }
 }
