@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dominio;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.ServiceModel;
@@ -11,7 +12,7 @@ namespace ServidorMemoramaLis.Contracts
     public interface IServicioChat
     {
         [OperationContract(IsOneWay = true)]
-        void UnirseAChat(string nombreUsuario, string codigoDeChat);
+        void UnirseAChat(string nombreUsuario,string codigoDeChat);
         [OperationContract(IsOneWay = true)]
         void EnviarMensaje(string mensaje, string nombreUsuario, string codigoDeChat);
         [OperationContract(IsOneWay = true)]

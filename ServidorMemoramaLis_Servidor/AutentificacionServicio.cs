@@ -6,9 +6,11 @@ using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 using Dominio;
-using ServidorMemoramaLis.Logic;
 using ServidorMemoramaLis.Contracts;
 using System.Threading;
+using AccesoADatos;
+using System.Data.Entity.Core;
+using System.Transactions;
 
 namespace ServidorMemoramaLis_Servidor
 {
@@ -19,8 +21,7 @@ namespace ServidorMemoramaLis_Servidor
         Dictionary<string, OperationContext> jugadoresActivos = new Dictionary<string, OperationContext>();
         public void AutentificacionUsuario(string usuario, string contrasenia)
         {
-            AutenficacionServicio_Logica autenficacionServicio_Logica = new AutenficacionServicio_Logica();
-            JugadoresDTO jugadorDTO = autenficacionServicio_Logica.respuestaAutenficacionJugador(usuario, contrasenia);
+            JugadoresDTO jugadorDTO = RespuestaAutenficacionJugador(usuario, contrasenia);
 
             if (jugadorDTO.NombreJugador != null && !jugadoresActivos.ContainsKey(jugadorDTO.NombreJugador))
             {
@@ -30,26 +31,29 @@ namespace ServidorMemoramaLis_Servidor
             
         }
 
-        public void RegistroJugador(JugadoresDTO jugador)
+        public JugadoresDTO RespuestaAutenficacionJugador(string email, string contrasenia)
         {
-            AutenficacionServicio_Logica autenficacionServicio_Logica = new AutenficacionServicio_Logica();
-            bool status = autenficacionServicio_Logica.RegistrarJugador(jugador);
-            OperationContext.Current.GetCallbackChannel<IAutentificacionServicioCallBack>().Respuestaregistro(status);
+            JugadoresDTO jugadorDTO = new JugadoresDTO()
+            {
+                EstadoConexion = false
+            };
 
-
-        }
-
-        public void UsuarioExistente(string usuario, string correo)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void ValidacionDeEmail(string correo)
-        {
-            throw new NotImplementedException();
+            using (var context = new MemoramaLISEntities())
+            {
+                Jugadores jugador = context.Jugadores.FirstOrDefault(j => j.email == email);
+                bool login = context.Logins.Any(l => l.idJugador == jugador.idJugador && l.contrasenia == contrasenia);
+                if (login)
+                {
+                    jugadorDTO.EstadoConexion = true;
+                    jugadorDTO.Email = jugador.email;
+                    jugadorDTO.NombreJugador = jugador.nombreJugador;
+                    jugadorDTO.Fotos = jugador.Fotos;
+                }
+                return jugadorDTO;
+            }
         }
     }
-
+    
 
 
 }

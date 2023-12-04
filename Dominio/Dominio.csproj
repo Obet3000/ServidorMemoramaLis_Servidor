@@ -45,7 +45,6 @@
   <ItemGroup>
     <Compile Include="JugadoresDTO.cs" />
     <Compile Include="PartidasDTO.cs" />
-    <Compile Include="Partidas_JugadoresDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

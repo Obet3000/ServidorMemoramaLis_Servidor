@@ -12,28 +12,12 @@ namespace ServidorMemoramaLis.Contracts
     public interface IAutentificacionServicio
     {
         [OperationContract(IsOneWay = true)]
-        void AutentificacionUsuario(String usuario, String contrasenia);
-
-        [OperationContract(IsOneWay = true)]
-        void RegistroJugador(JugadoresDTO jugador);
-
-        [OperationContract(IsOneWay = true)]
-        void ValidacionDeEmail(String correo);
-
-        [OperationContract(IsOneWay = true)]
-        void UsuarioExistente(string usuario, string correo);
-    }
+        void AutentificacionUsuario(String email, String contrasenia);
+ }
     public interface IAutentificacionServicioCallBack
     {
         [OperationContract(IsOneWay = true)]
         void RespuestaAutentificacion(JugadoresDTO jugador);
 
-        [OperationContract(IsOneWay = true)]
-        void RespuestaEmail(string codigoVerificacíon);
-
-        [OperationContract(IsOneWay = true)]
-        void Respuestaregistro(bool estado);
-        [OperationContract(IsOneWay = true)]
-        void RespuestaUsuarioExistente(bool status);
     }
 }

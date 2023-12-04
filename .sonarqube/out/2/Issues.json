@@ -1,0 +1,99 @@
+{
+  "$schema": "http://json.schemastore.org/sarif-1.0.0",
+  "version": "1.0.0",
+  "runs": [
+    {
+      "tool": {
+        "name": "Compilador de Microsoft (R) Visual C#",
+        "version": "4.6.0.0",
+        "fileVersion": "4.6.0-3.23259.8 (c3cc1d0c)",
+        "semanticVersion": "4.6.0",
+        "language": "es-MX"
+      },
+      "results": [
+        {
+          "ruleId": "S3597",
+          "level": "warning",
+          "message": "Add the 'ServiceContract' attribute to  this interface.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/obeth/Downloads/ServidorMemoramaLis_Servidor/InicioDeSesionService.Contracts/IServicioPartida.cs",
+                "region": {
+                  "startLine": 35,
+                  "startColumn": 22,
+                  "endLine": 35,
+                  "endColumn": 46
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S3597",
+          "level": "warning",
+          "message": "Add the 'ServiceContract' attribute to  this interface.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/obeth/Downloads/ServidorMemoramaLis_Servidor/InicioDeSesionService.Contracts/IAutentificacionServicio.cs",
+                "region": {
+                  "startLine": 26,
+                  "startColumn": 22,
+                  "endLine": 26,
+                  "endColumn": 54
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S3597",
+          "level": "warning",
+          "message": "Add the 'ServiceContract' attribute to  this interface.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/obeth/Downloads/ServidorMemoramaLis_Servidor/InicioDeSesionService.Contracts/IServicioChat.cs",
+                "region": {
+                  "startLine": 25,
+                  "startColumn": 22,
+                  "endLine": 25,
+                  "endColumn": 43
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        }
+      ],
+      "rules": {
+        "S3597": {
+          "id": "S3597",
+          "shortDescription": "\"ServiceContract\" and \"OperationContract\" attributes should be used together",
+          "fullDescription": "The ServiceContract attribute specifies that a class or interface defines the communication contract of a Windows Communication Foundation (WCF) service. The service operations of this class or interface are defined by OperationContract attributes added to methods. It doesn’t make sense to define a contract without any service operations; thus, in a ServiceContract class or interface at least one method should be annotated with OperationContract. Similarly, WCF only serves OperationContract methods that are defined inside ServiceContract classes or interfaces; thus, this rule also checks that ServiceContract is added to the containing type of OperationContract methods.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-3597",
+          "properties": {
+            "category": "Major Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}
