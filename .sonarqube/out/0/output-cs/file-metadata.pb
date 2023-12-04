@@ -1,0 +1,16 @@
+W
+LC:\Users\obeth\Downloads\ServidorMemoramaLis_Servidor\AccesoADatos\Amigos.csutf-8W
+LC:\Users\obeth\Downloads\ServidorMemoramaLis_Servidor\AccesoADatos\Cartas.csutf-8Z
+OC:\Users\obeth\Downloads\ServidorMemoramaLis_Servidor\AccesoADatos\Jugadores.csutf-8W
+LC:\Users\obeth\Downloads\ServidorMemoramaLis_Servidor\AccesoADatos\Logins.csutf-8d
+YC:\Users\obeth\Downloads\ServidorMemoramaLis_Servidor\AccesoADatos\MemoramaLis.Context.csutf-8\
+QC:\Users\obeth\Downloads\ServidorMemoramaLis_Servidor\AccesoADatos\MemoramaLis.csutf-8e
+ZC:\Users\obeth\Downloads\ServidorMemoramaLis_Servidor\AccesoADatos\MemoramaLis.Designer.csutf-8Y
+NC:\Users\obeth\Downloads\ServidorMemoramaLis_Servidor\AccesoADatos\Partidas.csutf-8`
+UC:\Users\obeth\Downloads\ServidorMemoramaLis_Servidor\AccesoADatos\Partidas_Cartas.csutf-8c
+XC:\Users\obeth\Downloads\ServidorMemoramaLis_Servidor\AccesoADatos\Partidas_Jugadores.csutf-8f
+]C:\Users\obeth\Downloads\ServidorMemoramaLis_Servidor\AccesoADatos\Properties\AssemblyInfo.csutf-8]
+RC:\Users\obeth\Downloads\ServidorMemoramaLis_Servidor\AccesoADatos\Puntuaciones.csutf-8p
+eC:\Users\obeth\Downloads\ServidorMemoramaLis_Servidor\AccesoADatos\sp_helpdiagramdefinition_Result.csutf-8g
+\C:\Users\obeth\Downloads\ServidorMemoramaLis_Servidor\AccesoADatos\sp_helpdiagrams_Result.csutf-8Š
+C:\Users\obeth\Downloads\ServidorMemoramaLis_Servidor\AccesoADatos\obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.csutf-8

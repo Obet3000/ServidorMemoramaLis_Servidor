@@ -13,7 +13,6 @@ namespace Dominio
     {
             [DataMember]
             public string IdJugador { get; set; }
-
             [DataMember]
             public string NombreJugador { get; set; }
 
@@ -28,6 +27,9 @@ namespace Dominio
             [DataMember]
             public bool EstadoConexion;
 
+            [DataMember]
+            public int puntos { get; set; }
+            public int NumeroDeReportes { get; set; }
             public OperationContext Conexion { get; set; }
     }
     }

@@ -1,0 +1,4 @@
+﻿C:\Users\obeth\Downloads\ServidorMemoramaLis_Servidor\InicioDeSesionService.Contracts\IAutentificacionServicio.cs
+C:\Users\obeth\Downloads\ServidorMemoramaLis_Servidor\InicioDeSesionService.Contracts\IServicioChat.cs
+C:\Users\obeth\Downloads\ServidorMemoramaLis_Servidor\InicioDeSesionService.Contracts\IServicioPartida.cs
+C:\Users\obeth\Downloads\ServidorMemoramaLis_Servidor\InicioDeSesionService.Contracts\Properties\AssemblyInfo.cs

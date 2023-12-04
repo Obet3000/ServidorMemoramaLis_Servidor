@@ -1,0 +1,7 @@
+﻿C:\Users\obeth\Downloads\ServidorMemoramaLis_Servidor\ServidorMemoramaLis_Servidor\AutentificacionServicio.cs
+C:\Users\obeth\Downloads\ServidorMemoramaLis_Servidor\ServidorMemoramaLis_Servidor\program.cs
+C:\Users\obeth\Downloads\ServidorMemoramaLis_Servidor\ServidorMemoramaLis_Servidor\Properties\AssemblyInfo.cs
+C:\Users\obeth\Downloads\ServidorMemoramaLis_Servidor\ServidorMemoramaLis_Servidor\ServicioChat.cs
+C:\Users\obeth\Downloads\ServidorMemoramaLis_Servidor\ServidorMemoramaLis_Servidor\ServicioPartida.cs
+C:\Users\obeth\Downloads\ServidorMemoramaLis_Servidor\ServidorMemoramaLis_Servidor\App.config
+C:\Users\obeth\Downloads\ServidorMemoramaLis_Servidor\ServidorMemoramaLis_Servidor\packages.config

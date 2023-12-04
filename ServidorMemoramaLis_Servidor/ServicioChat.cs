@@ -15,7 +15,7 @@ namespace ServidorMemoramaLis_Servidor
         List<PartidasDTO> chatsActivos = new List<PartidasDTO>();
         public void BorrarChat(string codigoDeChat)
         {
-            var chat = chatsActivos.FirstOrDefault(chatPartida => chatPartida.codigoPartida == codigoDeChat);
+            var chat = chatsActivos.FirstOrDefault(chatPartida => chatPartida.CodigoPartida == codigoDeChat);
             if (chat != null)
             {
                 chatsActivos.Remove(chat);
@@ -24,19 +24,20 @@ namespace ServidorMemoramaLis_Servidor
 
         public void CrearChat(string codigoDeChat)
         {
+            /*
             List<Partidas_JugadoresDTO> partidas_JugadoresDTO = new List<Partidas_JugadoresDTO>();
 
             PartidasDTO partidaDTO = new PartidasDTO()
             {
                 codigoPartida = codigoDeChat,
-                Partidas_Jugadores = partidas_JugadoresDTO
             };
             chatsActivos.Add(partidaDTO);
+            */
         }
 
         public void EnviarMensaje(string mensaje, string nombreUsuario, string codigoDeChat)
         {
-            var chat = chatsActivos.FirstOrDefault(chatPartida => chatPartida.codigoPartida == codigoDeChat);
+            /*var chat = chatsActivos.FirstOrDefault(chatPartida => chatPartida.codigoPartida == codigoDeChat);
             if (chat != null)
             {
                 Task tarea = new Task(() => {
@@ -54,12 +55,12 @@ namespace ServidorMemoramaLis_Servidor
                     }
                 });
                 tarea.Start();
-            }
+            }*/
         }
 
         public void SalirDelChat(string nombreDeUsuario, string codigoDeChat)
         {
-            var chat = chatsActivos.FirstOrDefault(chatPartida => chatPartida.codigoPartida == codigoDeChat);
+           /* var chat = chatsActivos.FirstOrDefault(chatPartida => chatPartida.codigoPartida == codigoDeChat);
             if (chat != null)
             {
                 var jugadorEncontrado = chat.Partidas_Jugadores.FirstOrDefault(jugador => jugador.Jugadores.NombreJugador == nombreDeUsuario);
@@ -69,12 +70,12 @@ namespace ServidorMemoramaLis_Servidor
                     chat.Partidas_Jugadores.Remove(jugadorEncontrado);
                     EnviarMensaje("Adios a todos", nombreDeUsuario, codigoDeChat);
                 }
-            }
+            }*/
         }
 
         public void UnirseAChat(string nombreUsuario, string codigoDeChat)
         {
-            var chat = chatsActivos.FirstOrDefault(chatPartida => chatPartida.codigoPartida == codigoDeChat);
+          /*  var chat = chatsActivos.FirstOrDefault(chatPartida => chatPartida.codigoPartida == codigoDeChat);
             if (chat != null)
             {
                 JugadoresDTO jugadores = new JugadoresDTO()
@@ -90,8 +91,7 @@ namespace ServidorMemoramaLis_Servidor
                 partidaJugadores.Partidas.codigoPartida = codigoDeChat;
                 chat.Partidas_Jugadores.Add(partidaJugadores);
                 EnviarMensaje("Entre al chat ", nombreUsuario, codigoDeChat);
-
-            }
+            }*/
         }
     }
 }

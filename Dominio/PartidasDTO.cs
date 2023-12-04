@@ -11,14 +11,16 @@ namespace Dominio
     public class PartidasDTO
     {
         [DataMember]
-        public string idPartida { get; set; }
+        public string IdPartida { get; set; }
         [DataMember]
-        public int numeroJugadores { get; set; }
+        public int NumeroJugadores { get; set; }
         [DataMember]
-        public string codigoPartida { get; set; }
+        public int EstadoPartida { get; set; }
         [DataMember]
-        public virtual ICollection<Partidas_JugadoresDTO> Partidas_Jugadores { get; set; }
-
-
+        public string CodigoPartida { get; set; }
+        [DataMember]
+        public List<JugadoresDTO> Jugadores { get; set; }
+        [DataMember]
+        public Dictionary<int, string> Tablero { get; set; }
     }
 }

@@ -9,8 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServidorMemoramaLis.Contrac
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dominio", "Dominio\Dominio.csproj", "{EA42A4A9-5012-4070-A875-E36CD1B249FF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServidorMemoramaLis.Logic", "ServidorMemoramaLis.Logic\ServidorMemoramaLis.Logic.csproj", "{B177CD50-0D03-482A-8903-EC4DCA6AA80D}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccesoADatos", "AccesoADatos\AccesoADatos.csproj", "{FE0BD2DA-4DC9-4366-A7C4-43A3DA96725E}"
 EndProject
 Global
@@ -31,10 +29,6 @@ Global
 		{EA42A4A9-5012-4070-A875-E36CD1B249FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EA42A4A9-5012-4070-A875-E36CD1B249FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EA42A4A9-5012-4070-A875-E36CD1B249FF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B177CD50-0D03-482A-8903-EC4DCA6AA80D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B177CD50-0D03-482A-8903-EC4DCA6AA80D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B177CD50-0D03-482A-8903-EC4DCA6AA80D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B177CD50-0D03-482A-8903-EC4DCA6AA80D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FE0BD2DA-4DC9-4366-A7C4-43A3DA96725E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FE0BD2DA-4DC9-4366-A7C4-43A3DA96725E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE0BD2DA-4DC9-4366-A7C4-43A3DA96725E}.Release|Any CPU.ActiveCfg = Release|Any CPU

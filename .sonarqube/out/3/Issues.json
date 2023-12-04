@@ -1,0 +1,957 @@
+{
+  "$schema": "http://json.schemastore.org/sarif-1.0.0",
+  "version": "1.0.0",
+  "runs": [
+    {
+      "tool": {
+        "name": "Compilador de Microsoft (R) Visual C#",
+        "version": "4.6.0.0",
+        "fileVersion": "4.6.0-3.23259.8 (c3cc1d0c)",
+        "semanticVersion": "4.6.0",
+        "language": "es-MX"
+      },
+      "results": [
+        {
+          "ruleId": "CS0168",
+          "level": "warning",
+          "message": "La variable 'ex' se ha declarado pero nunca se usa",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/obeth/Downloads/ServidorMemoramaLis_Servidor/ServidorMemoramaLis_Servidor/AutentificacionServicio.cs",
+                "region": {
+                  "startLine": 97,
+                  "startColumn": 40,
+                  "endLine": 97,
+                  "endColumn": 42
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 3
+          }
+        },
+        {
+          "ruleId": "S1118",
+          "level": "warning",
+          "message": "Add a 'protected' constructor or the 'static' keyword to the class declaration.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/obeth/Downloads/ServidorMemoramaLis_Servidor/ServidorMemoramaLis_Servidor/program.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 20,
+                  "endLine": 8,
+                  "endColumn": 27
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S125",
+          "level": "warning",
+          "message": "Remove this commented out code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/obeth/Downloads/ServidorMemoramaLis_Servidor/ServidorMemoramaLis_Servidor/ServicioChat.cs",
+                "region": {
+                  "startLine": 38,
+                  "startColumn": 13,
+                  "endLine": 38,
+                  "endColumn": 112
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S125",
+          "level": "warning",
+          "message": "Remove this commented out code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/obeth/Downloads/ServidorMemoramaLis_Servidor/ServidorMemoramaLis_Servidor/ServicioChat.cs",
+                "region": {
+                  "startLine": 61,
+                  "startColumn": 12,
+                  "endLine": 61,
+                  "endColumn": 112
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S125",
+          "level": "warning",
+          "message": "Remove this commented out code.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/obeth/Downloads/ServidorMemoramaLis_Servidor/ServidorMemoramaLis_Servidor/ServicioChat.cs",
+                "region": {
+                  "startLine": 76,
+                  "startColumn": 11,
+                  "endLine": 76,
+                  "endColumn": 112
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2933",
+          "level": "warning",
+          "message": "Make 'chatsActivos' 'readonly'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/obeth/Downloads/ServidorMemoramaLis_Servidor/ServidorMemoramaLis_Servidor/ServicioChat.cs",
+                "region": {
+                  "startLine": 15,
+                  "startColumn": 27,
+                  "endLine": 15,
+                  "endColumn": 39
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2933",
+          "level": "warning",
+          "message": "Make 'jugadoresActivos' 'readonly'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/obeth/Downloads/ServidorMemoramaLis_Servidor/ServidorMemoramaLis_Servidor/AutentificacionServicio.cs",
+                "region": {
+                  "startLine": 21,
+                  "startColumn": 46,
+                  "endLine": 21,
+                  "endColumn": 62
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2933",
+          "level": "warning",
+          "message": "Make 'tableroGenerado' 'readonly'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/obeth/Downloads/ServidorMemoramaLis_Servidor/ServidorMemoramaLis_Servidor/ServicioPartida.cs",
+                "region": {
+                  "startLine": 17,
+                  "startColumn": 33,
+                  "endLine": 17,
+                  "endColumn": 48
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2933",
+          "level": "warning",
+          "message": "Make 'partidasActivas' 'readonly'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/obeth/Downloads/ServidorMemoramaLis_Servidor/ServidorMemoramaLis_Servidor/ServicioPartida.cs",
+                "region": {
+                  "startLine": 121,
+                  "startColumn": 27,
+                  "endLine": 121,
+                  "endColumn": 42
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6602",
+          "level": "warning",
+          "message": "\"Find\" method should be used instead of the \"FirstOrDefault\" extension method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/obeth/Downloads/ServidorMemoramaLis_Servidor/ServidorMemoramaLis_Servidor/ServicioPartida.cs",
+                "region": {
+                  "startLine": 125,
+                  "startColumn": 50,
+                  "endLine": 125,
+                  "endColumn": 64
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6602",
+          "level": "warning",
+          "message": "\"Find\" method should be used instead of the \"FirstOrDefault\" extension method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/obeth/Downloads/ServidorMemoramaLis_Servidor/ServidorMemoramaLis_Servidor/ServicioChat.cs",
+                "region": {
+                  "startLine": 18,
+                  "startColumn": 37,
+                  "endLine": 18,
+                  "endColumn": 51
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2245",
+          "level": "warning",
+          "message": "Make sure that using this pseudorandom number generator is safe here.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/obeth/Downloads/ServidorMemoramaLis_Servidor/ServidorMemoramaLis_Servidor/ServicioPartida.cs",
+                "region": {
+                  "startLine": 141,
+                  "startColumn": 26,
+                  "endLine": 141,
+                  "endColumn": 38
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1481",
+          "level": "warning",
+          "message": "Remove the unused local variable 'partidas_JugadoresDTO'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/obeth/Downloads/ServidorMemoramaLis_Servidor/ServidorMemoramaLis_Servidor/ServicioChat.cs",
+                "region": {
+                  "startLine": 27,
+                  "startColumn": 41,
+                  "endLine": 27,
+                  "endColumn": 62
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2971",
+          "level": "warning",
+          "message": "Use 'Count' property here instead.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/obeth/Downloads/ServidorMemoramaLis_Servidor/ServidorMemoramaLis_Servidor/ServicioPartida.cs",
+                "region": {
+                  "startLine": 167,
+                  "startColumn": 63,
+                  "endLine": 167,
+                  "endColumn": 68
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2971",
+          "level": "warning",
+          "message": "Use 'Count' property here instead.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/obeth/Downloads/ServidorMemoramaLis_Servidor/ServidorMemoramaLis_Servidor/ServicioPartida.cs",
+                "region": {
+                  "startLine": 208,
+                  "startColumn": 69,
+                  "endLine": 208,
+                  "endColumn": 74
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6602",
+          "level": "warning",
+          "message": "\"Find\" method should be used instead of the \"FirstOrDefault\" extension method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/obeth/Downloads/ServidorMemoramaLis_Servidor/ServidorMemoramaLis_Servidor/ServicioPartida.cs",
+                "region": {
+                  "startLine": 199,
+                  "startColumn": 57,
+                  "endLine": 199,
+                  "endColumn": 71
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6602",
+          "level": "warning",
+          "message": "\"Find\" method should be used instead of the \"FirstOrDefault\" extension method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/obeth/Downloads/ServidorMemoramaLis_Servidor/ServidorMemoramaLis_Servidor/ServicioPartida.cs",
+                "region": {
+                  "startLine": 161,
+                  "startColumn": 61,
+                  "endLine": 161,
+                  "endColumn": 75
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6602",
+          "level": "warning",
+          "message": "\"Find\" method should be used instead of the \"FirstOrDefault\" extension method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/obeth/Downloads/ServidorMemoramaLis_Servidor/ServidorMemoramaLis_Servidor/ServicioPartida.cs",
+                "region": {
+                  "startLine": 162,
+                  "startColumn": 57,
+                  "endLine": 162,
+                  "endColumn": 71
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6602",
+          "level": "warning",
+          "message": "\"Find\" method should be used instead of the \"FirstOrDefault\" extension method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/obeth/Downloads/ServidorMemoramaLis_Servidor/ServidorMemoramaLis_Servidor/ServicioPartida.cs",
+                "region": {
+                  "startLine": 163,
+                  "startColumn": 57,
+                  "endLine": 163,
+                  "endColumn": 71
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6602",
+          "level": "warning",
+          "message": "\"Find\" method should be used instead of the \"FirstOrDefault\" extension method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/obeth/Downloads/ServidorMemoramaLis_Servidor/ServidorMemoramaLis_Servidor/ServicioPartida.cs",
+                "region": {
+                  "startLine": 164,
+                  "startColumn": 63,
+                  "endLine": 164,
+                  "endColumn": 77
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6602",
+          "level": "warning",
+          "message": "\"Find\" method should be used instead of the \"FirstOrDefault\" extension method.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/obeth/Downloads/ServidorMemoramaLis_Servidor/ServidorMemoramaLis_Servidor/ServicioPartida.cs",
+                "region": {
+                  "startLine": 165,
+                  "startColumn": 55,
+                  "endLine": 165,
+                  "endColumn": 69
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2259",
+          "level": "warning",
+          "message": "'partidasActivas.FirstOrDefault(partida => partida.codigoPartida == codigoDePartida)' is null on at least one execution path.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/obeth/Downloads/ServidorMemoramaLis_Servidor/ServidorMemoramaLis_Servidor/ServicioPartida.cs",
+                "region": {
+                  "startLine": 161,
+                  "startColumn": 45,
+                  "endLine": 161,
+                  "endColumn": 128
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2259",
+          "level": "warning",
+          "message": "'partidasActivas.FirstOrDefault(partida => partida.codigoPartida == codigoDePartida)' is null on at least one execution path.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/obeth/Downloads/ServidorMemoramaLis_Servidor/ServidorMemoramaLis_Servidor/ServicioPartida.cs",
+                "region": {
+                  "startLine": 162,
+                  "startColumn": 41,
+                  "endLine": 162,
+                  "endColumn": 124
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2259",
+          "level": "warning",
+          "message": "'partidasActivas.FirstOrDefault(partida => partida.codigoPartida == codigoDePartida)' is null on at least one execution path.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/obeth/Downloads/ServidorMemoramaLis_Servidor/ServidorMemoramaLis_Servidor/ServicioPartida.cs",
+                "region": {
+                  "startLine": 163,
+                  "startColumn": 41,
+                  "endLine": 163,
+                  "endColumn": 124
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2259",
+          "level": "warning",
+          "message": "'partidasActivas.FirstOrDefault(partida => partida.codigoPartida == codigoDePartida)' is null on at least one execution path.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/obeth/Downloads/ServidorMemoramaLis_Servidor/ServidorMemoramaLis_Servidor/ServicioPartida.cs",
+                "region": {
+                  "startLine": 164,
+                  "startColumn": 47,
+                  "endLine": 164,
+                  "endColumn": 130
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2259",
+          "level": "warning",
+          "message": "'partidasActivas.FirstOrDefault(partida => partida.codigoPartida == codigoDePartida)' is null on at least one execution path.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/obeth/Downloads/ServidorMemoramaLis_Servidor/ServidorMemoramaLis_Servidor/ServicioPartida.cs",
+                "region": {
+                  "startLine": 165,
+                  "startColumn": 39,
+                  "endLine": 165,
+                  "endColumn": 122
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2589",
+          "level": "warning",
+          "message": "Change this condition so that it does not always evaluate to 'True'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/obeth/Downloads/ServidorMemoramaLis_Servidor/ServidorMemoramaLis_Servidor/ServicioPartida.cs",
+                "region": {
+                  "startLine": 166,
+                  "startColumn": 17,
+                  "endLine": 166,
+                  "endColumn": 40
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6608",
+          "level": "warning",
+          "message": "Indexing should be used instead of the \"Enumerable\" extension method \"ElementAt\"",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/obeth/Downloads/ServidorMemoramaLis_Servidor/ServidorMemoramaLis_Servidor/ServicioPartida.cs",
+                "region": {
+                  "startLine": 171,
+                  "startColumn": 51,
+                  "endLine": 171,
+                  "endColumn": 60
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6608",
+          "level": "warning",
+          "message": "Indexing should be used instead of the \"Enumerable\" extension method \"ElementAt\"",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/obeth/Downloads/ServidorMemoramaLis_Servidor/ServidorMemoramaLis_Servidor/ServicioPartida.cs",
+                "region": {
+                  "startLine": 212,
+                  "startColumn": 57,
+                  "endLine": 212,
+                  "endColumn": 66
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6608",
+          "level": "warning",
+          "message": "Indexing should be used instead of the \"Enumerable\" extension method \"ElementAt\"",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/obeth/Downloads/ServidorMemoramaLis_Servidor/ServidorMemoramaLis_Servidor/ServicioPartida.cs",
+                "region": {
+                  "startLine": 175,
+                  "startColumn": 51,
+                  "endLine": 175,
+                  "endColumn": 60
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6608",
+          "level": "warning",
+          "message": "Indexing should be used instead of the \"Enumerable\" extension method \"ElementAt\"",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/obeth/Downloads/ServidorMemoramaLis_Servidor/ServidorMemoramaLis_Servidor/ServicioPartida.cs",
+                "region": {
+                  "startLine": 213,
+                  "startColumn": 57,
+                  "endLine": 213,
+                  "endColumn": 66
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6608",
+          "level": "warning",
+          "message": "Indexing should be used instead of the \"Enumerable\" extension method \"ElementAt\"",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/obeth/Downloads/ServidorMemoramaLis_Servidor/ServidorMemoramaLis_Servidor/ServicioPartida.cs",
+                "region": {
+                  "startLine": 218,
+                  "startColumn": 57,
+                  "endLine": 218,
+                  "endColumn": 66
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6608",
+          "level": "warning",
+          "message": "Indexing should be used instead of the \"Enumerable\" extension method \"ElementAt\"",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/obeth/Downloads/ServidorMemoramaLis_Servidor/ServidorMemoramaLis_Servidor/ServicioPartida.cs",
+                "region": {
+                  "startLine": 175,
+                  "startColumn": 162,
+                  "endLine": 175,
+                  "endColumn": 171
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6608",
+          "level": "warning",
+          "message": "Indexing should be used instead of the \"Enumerable\" extension method \"ElementAt\"",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/obeth/Downloads/ServidorMemoramaLis_Servidor/ServidorMemoramaLis_Servidor/ServicioPartida.cs",
+                "region": {
+                  "startLine": 218,
+                  "startColumn": 170,
+                  "endLine": 218,
+                  "endColumn": 179
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6608",
+          "level": "warning",
+          "message": "Indexing should be used instead of the \"Enumerable\" extension method \"ElementAt\"",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/obeth/Downloads/ServidorMemoramaLis_Servidor/ServidorMemoramaLis_Servidor/ServicioPartida.cs",
+                "region": {
+                  "startLine": 176,
+                  "startColumn": 84,
+                  "endLine": 176,
+                  "endColumn": 93
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S6608",
+          "level": "warning",
+          "message": "Indexing should be used instead of the \"Enumerable\" extension method \"ElementAt\"",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/obeth/Downloads/ServidorMemoramaLis_Servidor/ServidorMemoramaLis_Servidor/ServicioPartida.cs",
+                "region": {
+                  "startLine": 219,
+                  "startColumn": 92,
+                  "endLine": 219,
+                  "endColumn": 101
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        }
+      ],
+      "rules": {
+        "CS0168": {
+          "id": "CS0168",
+          "shortDescription": "La variable está declarada pero nunca se usa",
+          "defaultLevel": "warning",
+          "helpUri": "https://msdn.microsoft.com/query/roslyn.query?appId=roslyn&k=k(CS0168)",
+          "properties": {
+            "category": "Compiler",
+            "isEnabledByDefault": true,
+            "tags": [
+              "Compiler",
+              "Telemetry"
+            ]
+          }
+        },
+        "S1118": {
+          "id": "S1118",
+          "shortDescription": "Utility classes should not have public constructors",
+          "fullDescription": "Whenever there are portions of code that are duplicated and do not depend on the state of their container class, they can be centralized inside a \"utility class\". A utility class is a class that only has static members, hence it should not be instantiated.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-1118",
+          "properties": {
+            "category": "Major Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S125": {
+          "id": "S125",
+          "shortDescription": "Sections of code should not be commented out",
+          "fullDescription": "Commented-out code distracts the focus from the actual executed code. It creates a noise that increases maintenance code. And because it is never executed, it quickly becomes out of date and invalid.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-125",
+          "properties": {
+            "category": "Major Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S1481": {
+          "id": "S1481",
+          "shortDescription": "Unused local variables should be removed",
+          "fullDescription": "An unused local variable is a variable that has been declared but is not used anywhere in the block of code where it is defined. It is dead code, contributing to unnecessary complexity and leading to confusion when reading the code. Therefore, it should be removed from your code to maintain clarity and efficiency.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-1481",
+          "properties": {
+            "category": "Minor Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S2245": {
+          "id": "S2245",
+          "shortDescription": "Using pseudorandom number generators (PRNGs) is security-sensitive",
+          "fullDescription": "Using pseudorandom number generators (PRNGs) is security-sensitive. For example, it has led in the past to the following vulnerabilities:",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-2245",
+          "properties": {
+            "category": "Critical Security Hotspot",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S2259": {
+          "id": "S2259",
+          "shortDescription": "Null pointers should not be dereferenced",
+          "fullDescription": "Accessing a null value will always throw a NullReferenceException most likely causing an abrupt program termination.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-2259",
+          "properties": {
+            "category": "Major Bug",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S2589": {
+          "id": "S2589",
+          "shortDescription": "Boolean expressions should not be gratuitous",
+          "fullDescription": "Gratuitous boolean expressions are conditions that do not change the evaluation of a program. This issue can indicate logical errors and affect the correctness of an application, as well as its maintainability.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-2589",
+          "properties": {
+            "category": "Major Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S2933": {
+          "id": "S2933",
+          "shortDescription": "Fields that are only assigned in the constructor should be \"readonly\"",
+          "fullDescription": "readonly fields can only be assigned in a class constructor. If a class has a field that’s not marked readonly but is only set in the constructor, it could cause confusion about the field’s intended use. To avoid confusion, such fields should be marked readonly to make their intended use explicit, and to prevent future maintainers from inadvertently changing their use.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-2933",
+          "properties": {
+            "category": "Major Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S2971": {
+          "id": "S2971",
+          "shortDescription": "LINQ expressions should be simplified",
+          "fullDescription": "In the interests of readability, code that can be simplified should be simplified. To that end, there are several ways IEnumerable language integrated queries (LINQ) can be simplified. This not only improves readabilty but can also lead to improved performance.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-2971",
+          "properties": {
+            "category": "Major Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S6602": {
+          "id": "S6602",
+          "shortDescription": "\"Find\" method should be used instead of the \"FirstOrDefault\" extension",
+          "fullDescription": "Both the List.Find method and IEnumerable.FirstOrDefault method can be used to find the first element that satisfies a given condition in a collection. However, List.Find can be faster than IEnumerable.FirstOrDefault for List objects. For small collections, the performance difference may be minor, but for large collections, it can make a noticeable difference. The same applies for ImmutableList and arrays too.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-6602",
+          "properties": {
+            "category": "Minor Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        },
+        "S6608": {
+          "id": "S6608",
+          "shortDescription": "Prefer indexing instead of \"Enumerable\" methods on types implementing \"IList\"",
+          "fullDescription": "Indexes in C# provide direct access to an element at a specific position within an array or collection. When compared to Enumerable methods, indexing can be more efficient for certain scenarios, such as iterating over a large collection, due to avoiding the overhead of checking the underlying collection type before accessing it.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-6608",
+          "properties": {
+            "category": "Minor Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "MainSourceScope",
+              "TestSourceScope",
+              "SonarWay"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

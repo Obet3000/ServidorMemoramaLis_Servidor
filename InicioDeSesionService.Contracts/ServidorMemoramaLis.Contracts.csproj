@@ -44,6 +44,8 @@
   <ItemGroup>
     <Compile Include="IAutentificacionServicio.cs" />
     <Compile Include="IServicioChat.cs" />
+    <Compile Include="IServicioRegistro.cs" />
+    <Compile Include="IServicioPartida.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,0 +1,4 @@
+﻿C:\Users\obeth\Downloads\ServidorMemoramaLis_Servidor\Dominio\JugadoresDTO.cs
+C:\Users\obeth\Downloads\ServidorMemoramaLis_Servidor\Dominio\PartidasDTO.cs
+C:\Users\obeth\Downloads\ServidorMemoramaLis_Servidor\Dominio\Partidas_JugadoresDTO.cs
+C:\Users\obeth\Downloads\ServidorMemoramaLis_Servidor\Dominio\Properties\AssemblyInfo.cs

@@ -59,6 +59,8 @@
     <Compile Include="program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServicioChat.cs" />
+    <Compile Include="ServicioRegistro.cs" />
+    <Compile Include="ServicioPartida.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -76,10 +78,6 @@
     <ProjectReference Include="..\InicioDeSesionService.Contracts\ServidorMemoramaLis.Contracts.csproj">
       <Project>{117A54DD-8408-48D8-AD9B-335353E0E3AF}</Project>
       <Name>ServidorMemoramaLis.Contracts</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ServidorMemoramaLis.Logic\ServidorMemoramaLis.Logic.csproj">
-      <Project>{b177cd50-0d03-482a-8903-ec4dca6aa80d}</Project>
-      <Name>ServidorMemoramaLis.Logic</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
